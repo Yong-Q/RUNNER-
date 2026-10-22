@@ -1,0 +1,30 @@
+{
+  "accepted": 0,
+  "rejected": [
+    {
+      "task": "frame_00000",
+      "reason": "[Errno 2] No such file or directory: 'RUNNER-/runs/vasp_prepare_verified/frame_00000/label.json'"
+    },
+    {
+      "task": "frame_00001",
+      "reason": "[Errno 2] No such file or directory: 'RUNNER-/runs/vasp_prepare_verified/frame_00001/label.json'"
+    },
+    {
+      "task": "frame_00002",
+      "reason": "[Errno 2] No such file or directory: 'RUNNER-/runs/vasp_prepare_verified/frame_00002/label.json'"
+    },
+    {
+      "task": "frame_00003",
+      "reason": "[Errno 2] No such file or directory: 'RUNNER-/runs/vasp_prepare_verified/frame_00003/label.json'"
+    },
+    {
+      "task": "frame_00004",
+      "reason": "[Errno 2] No such file or directory: 'RUNNER-/runs/vasp_prepare_verified/frame_00004/label.json'"
+    },
+    {
+      "task": "frame_00005",
+      "reason": "[Errno 2] No such file or directory: 'RUNNER-/runs/vasp_prepare_verified/frame_00005/label.json'"
+    }
+  ],
+  "reference_hash": "2c20b1acb0b112ed0692eff49709ded2f44d49a7a6df5c76fc8f2e15f3812de6"
+}

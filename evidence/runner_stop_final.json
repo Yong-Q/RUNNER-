@@ -1,0 +1,17 @@
+{
+  "status": "stopped",
+  "reason": "force_disagreement_above_stop",
+  "steps_completed": 0,
+  "frames": 1,
+  "candidates": 0,
+  "elapsed_s": 0.003976171836256981,
+  "calibrated_uncertainty": false,
+  "records": [
+    {
+      "step": 0,
+      "energy_eV": -439158.9482662851,
+      "temperature_K": 274.70343410598963,
+      "force_sigma_max_eVA": 11.446822691627338
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"backend":"polar","python":"/path/to/mace-env/bin/python","foundation_model":"models/MACE-POLAR-1-S.model","seeds":[17,29,43],"valid_fraction":0.2,"split_seed":42,"epochs":100,"batch_size":2,"threads":4,"device":"cpu","E0s":"average"}

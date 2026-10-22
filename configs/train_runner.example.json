@@ -1,0 +1,1 @@
+{"backend":"runner","executable":"build/runner_v4/RuNNer.x","input_nn_template":"configs/runner_co2_2g.example.nn","seeds":[17,29,43],"valid_fraction":0.2,"split_seed":42,"threads":4}

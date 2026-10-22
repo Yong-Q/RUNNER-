@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "reason": null,
+  "steps_completed": 12,
+  "frames": 4,
+  "candidates": 2,
+  "elapsed_s": 24.34612775919959,
+  "calibrated_uncertainty": false,
+  "records": [
+    {
+      "step": 0,
+      "energy_eV": -20530.80126494809,
+      "temperature_K": 206.96476009576534,
+      "force_sigma_max_eVA": 0.03336166302419151
+    },
+    {
+      "step": 5,
+      "energy_eV": -20530.80594008805,
+      "temperature_K": 233.43745073114758,
+      "force_sigma_max_eVA": 0.034876666239385304
+    },
+    {
+      "step": 10,
+      "energy_eV": -20530.829818582122,
+      "temperature_K": 249.74453154135261,
+      "force_sigma_max_eVA": 0.036828212125973085
+    },
+    {
+      "step": 12,
+      "energy_eV": -20530.8449920779,
+      "temperature_K": 265.70691567836803,
+      "force_sigma_max_eVA": 0.03755408263110307
+    }
+  ]
+}

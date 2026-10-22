@@ -1,0 +1,73 @@
+{
+  "status": "gate_failure",
+  "gates": {
+    "native_mean_and_population_variance": {
+      "pass": true
+    },
+    "native_vs_separate_single_model_calls": {
+      "max_force_component_error_eVA": 0.0,
+      "pass": true
+    },
+    "duplicate_model_negative_control": {
+      "max_force_sigma_eVA": 0.0,
+      "pass": true
+    },
+    "finite_difference_mean_force": {
+      "values": [
+        {
+          "h_A": 0.001,
+          "numerical_eVA": -0.08066292411967879,
+          "analytic_eVA": -0.08067222929473178,
+          "absolute_error_eVA": 9.305175052987114e-06
+        },
+        {
+          "h_A": 0.0003,
+          "numerical_eVA": -0.08068265742622317,
+          "analytic_eVA": -0.08067222929473178,
+          "absolute_error_eVA": 1.0428131491393988e-05
+        }
+      ],
+      "tolerance_eVA": 0.005,
+      "pass": true
+    },
+    "rigid_rotation_translation": {
+      "energy_difference_eV": 8.030769095057622e-06,
+      "max_force_covariance_error_eVA": 0.00018842107367117444,
+      "pass": false
+    },
+    "short_md_finite": {
+      "pass": true
+    }
+  },
+  "models": [
+    {
+      "file": "MACE-POLAR-1-S.model",
+      "sha256": "e4495612037b3b3312633182882a38a694ecac9ea0be2b9889ac0b2a84a99510",
+      "parameters": 8051710,
+      "class": "PolarMACE",
+      "r_max": 6.0
+    },
+    {
+      "file": "MACE-POLAR-1-M.model",
+      "sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+      "parameters": 15238498,
+      "class": "PolarMACE",
+      "r_max": 6.0
+    },
+    {
+      "file": "MACE-POLAR-1-L.model",
+      "sha256": "9f65f8dc6ddaff1d631e299cb531376a7da5e68d1bef04f34a2d5073d5ef114b",
+      "parameters": 25718949,
+      "class": "PolarMACE",
+      "r_max": 6.0
+    }
+  ],
+  "versions": {
+    "mace-torch": "0.3.16",
+    "graph-longrange": "0.4.0",
+    "torch": "2.12.0",
+    "ase": "3.26.0",
+    "e3nn": "0.4.4",
+    "numpy": "1.26.2"
+  }
+}

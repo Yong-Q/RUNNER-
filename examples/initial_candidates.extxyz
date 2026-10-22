@@ -1,0 +1,52 @@
+6
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=CO2_dimer_2.7 gas=CO2 kind=isolated_dimer molecules=2 selection=top_force_disagreement_uncalibrated force_sigma_max_eVA=0.41949275517350415 force_sigma_max=0.41949275517350415 group=CO2_dimer_2.7 pbc="F F F"
+C        8.65000000      12.00000000      12.00000000
+O        8.65000000      12.00000000      13.17865800
+O        8.65000000      12.00000000      10.82134200
+C       11.35000000      12.00000000      12.00000000
+O       12.31550011      12.00000000      12.67605046
+O       10.38449989      12.00000000      11.32394954
+6
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=CO2_dimer_3.5 gas=CO2 kind=isolated_dimer molecules=2 selection=top_force_disagreement_uncalibrated force_sigma_max_eVA=0.05762310927686767 force_sigma_max=0.05762310927686767 group=CO2_dimer_3.5 pbc="F F F"
+C        8.25000000      12.00000000      12.00000000
+O        8.25000000      12.00000000      13.17865800
+O        8.25000000      12.00000000      10.82134200
+C       11.75000000      12.00000000      12.00000000
+O       12.71550011      12.00000000      12.67605046
+O       10.78449989      12.00000000      11.32394954
+10
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=CH4_dimer_2.7 gas=CH4 kind=isolated_dimer molecules=2 selection=top_force_disagreement_uncalibrated force_sigma_max_eVA=0.08908651800133505 force_sigma_max=0.08908651800133505 group=CH4_dimer_2.7 pbc="F F F"
+C        8.65000000      12.00000000      12.00000000
+H        9.27911800      12.62911800      12.62911800
+H        8.02088200      11.37088200      12.62911800
+H        9.27911800      11.37088200      11.37088200
+H        8.02088200      12.62911800      11.37088200
+C       11.35000000      12.00000000      12.00000000
+H       12.22619056      12.62911800      11.84550396
+H       11.50449604      11.37088200      12.87619056
+H       11.19550396      11.37088200      11.12380944
+H       10.47380944      12.62911800      12.15449604
+10
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=CH4_dimer_3.5 gas=CH4 kind=isolated_dimer molecules=2 selection=top_force_disagreement_uncalibrated force_sigma_max_eVA=0.0048954950923921076 force_sigma_max=0.0048954950923921076 group=CH4_dimer_3.5 pbc="F F F"
+C        8.25000000      12.00000000      12.00000000
+H        8.87911800      12.62911800      12.62911800
+H        7.62088200      11.37088200      12.62911800
+H        8.87911800      11.37088200      11.37088200
+H        7.62088200      12.62911800      11.37088200
+C       11.75000000      12.00000000      12.00000000
+H       12.62619056      12.62911800      11.84550396
+H       11.90449604      11.37088200      12.87619056
+H       11.59550396      11.37088200      11.12380944
+H       10.87380944      12.62911800      12.15449604
+4
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=N2_dimer_2.7 gas=N2 kind=isolated_dimer molecules=2 selection=top_force_disagreement_uncalibrated force_sigma_max_eVA=0.11322072952158904 force_sigma_max=0.11322072952158904 group=N2_dimer_2.7 pbc="F F F"
+N        8.65000000      12.00000000      12.56499000
+N        8.65000000      12.00000000      11.43501000
+N       11.81281271      12.00000000      12.32406495
+N       10.88718729      12.00000000      11.67593505
+4
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=N2_dimer_3.5 gas=N2 kind=isolated_dimer molecules=2 selection=top_force_disagreement_uncalibrated force_sigma_max_eVA=0.03095801137201538 force_sigma_max=0.03095801137201538 group=N2_dimer_3.5 pbc="F F F"
+N        8.25000000      12.00000000      12.56499000
+N        8.25000000      12.00000000      11.43501000
+N       12.21281271      12.00000000      12.32406495
+N       11.28718729      12.00000000      11.67593505

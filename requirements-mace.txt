@@ -1,0 +1,7 @@
+mace-torch==0.3.16
+graph_longrange @ git+https://github.com/WillBaldwin0/graph_electrostatics.git@v0.4.0
+ase==3.26.0
+numpy==1.26.2
+e3nn==0.4.4
+matscipy==1.1.1
+torch==2.12.0

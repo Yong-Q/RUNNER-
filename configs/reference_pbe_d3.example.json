@@ -1,0 +1,15 @@
+{
+  "method_id": "PBE-D3BJ-PAW_example_not_convergence_validated",
+  "energy_convention": "free_energy",
+  "vacuum_A": 10.0,
+  "cores": 4,
+  "module": "vasp/6.3.2-all-intel2022.2",
+  "command": "mpiexec vasp_std",
+  "vasp_parameters": {
+    "xc": "PBE", "encut": 520, "ivdw": 12,
+    "ediff": 1e-7, "nelm": 150,
+    "ismear": 0, "sigma": 0.05, "prec": "Accurate", "lreal": false,
+    "kpts": [1, 1, 1], "gamma": true, "ispin": 1, "isym": 0,
+    "nsw": 0, "ibrion": -1, "lwave": false, "lcharg": false
+  }
+}

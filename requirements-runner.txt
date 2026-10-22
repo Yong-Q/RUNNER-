@@ -1,0 +1,9 @@
+runnerase==2.0.0
+runner-interface==0.4.2
+runnerase-core==0.11.2
+runnerase-prediction==0.3.1
+runnerase-training==0.8.0
+runnerase-workflows==0.3.1
+ase==3.29.0
+numpy==2.2.6
+scipy==1.15.3

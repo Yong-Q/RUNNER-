@@ -1,0 +1,45 @@
+{
+  "backend": "polar",
+  "config": {
+    "backend": "polar",
+    "models": [
+      "/home/qiuyong/bza/MLLP/committee_probe_20261022/models/MACE-POLAR-1-S.model",
+      "/home/qiuyong/bza/MLLP/committee_probe_20261022/models/MACE-POLAR-1-M.model",
+      "/home/qiuyong/bza/MLLP/committee_probe_20261022/models/MACE-POLAR-1-L.model"
+    ],
+    "device": "cpu",
+    "dtype": "float64",
+    "threads": 4,
+    "uncertainty_calibrated": false,
+    "sampling": {
+      "temperature_K": 300,
+      "timestep_fs": 0.25,
+      "friction_per_fs": 0.01,
+      "steps": 100,
+      "save_interval": 5,
+      "seed": 42,
+      "stop_sigma_eVA": 1.0
+    },
+    "selection": {
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "budget": 6,
+      "min_step_gap": 10
+    }
+  },
+  "atoms": 12,
+  "members": 3,
+  "warmup": 2,
+  "repeats": 5,
+  "seconds_per_call": [
+    2.3191388898994774,
+    1.893336343113333,
+    1.9096836769022048,
+    1.8775058381725103,
+    1.8963897789362818
+  ],
+  "median_us_per_atom_per_step": 158032.4815780235,
+  "scope": "full committee energy/force call; backend may also compute stress; excludes MD integration and I/O",
+  "same_geometry_repeated": true,
+  "units": "us/atom/step"
+}

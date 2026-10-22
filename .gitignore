@@ -1,0 +1,13 @@
+.venv*/
+external/
+build/
+local/
+runs/
+logs/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+*.model
+POTCAR*
+WAVECAR*
+CHGCAR*

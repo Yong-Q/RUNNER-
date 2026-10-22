@@ -1,0 +1,3 @@
+{"backend":"runner","potential":"local/runner_potential","library":"build/runner_v4/libRuNNer.so","threads":4,"uncertainty_calibrated":false,
+ "sampling":{"temperature_K":300,"timestep_fs":0.25,"steps":100,"save_interval":5,"seed":42,"stop_sigma_eVA":1.0},
+ "selection":{"minimum":0.0,"maximum":1.0,"budget":6,"min_step_gap":10}}

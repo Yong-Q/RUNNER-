@@ -1,0 +1,55 @@
+{
+  "runner_source": {
+    "repository": "https://gitlab.com/runner-suite/runner2.git",
+    "commit": "8046a9b86d4a9b3aafc386abcd47fef5d3a86607",
+    "build": "OpenMP shared library, no MPI; GCC 11.3, -O2; local cluster-specific sysroot"
+  },
+  "skills": [
+    {
+      "name": "frontend-design",
+      "repository": "https://github.com/anthropics/skills",
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "path": "skills/frontend-design/SKILL.md",
+      "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+      "install_scope": "project external/skills, fetched using git by skill-installer"
+    },
+    {
+      "name": "doc-coauthoring",
+      "repository": "https://github.com/anthropics/skills",
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "path": "skills/doc-coauthoring/SKILL.md",
+      "sha256": "2e47d78846faeea4a56e9809c52700087a15a2155a3f293a3efbaded81398ef4",
+      "install_scope": "project external/skills, fetched using git by skill-installer"
+    }
+  ],
+  "runner_python": {
+    "runnerase": "2.0.0",
+    "runner-interface": "0.4.2",
+    "runnerase-core": "0.11.2",
+    "runnerase-prediction": "0.3.1",
+    "runnerase-training": "0.8.0",
+    "ase": "3.29.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  },
+  "mace_models": [
+    {
+      "name": "MACE-POLAR-1-S.model",
+      "sha256": "e4495612037b3b3312633182882a38a694ecac9ea0be2b9889ac0b2a84a99510",
+      "bytes": 33375439,
+      "url": "https://github.com/ACEsuit/mace-foundations/releases/download/mace_polar_1/MACE-POLAR-1-S.model"
+    },
+    {
+      "name": "MACE-POLAR-1-M.model",
+      "sha256": "fab8b8713c832f31a2a853aaa22fd638be8a369cbf5095e6b3e982a18d10e93a",
+      "bytes": 68133235,
+      "url": "https://github.com/ACEsuit/mace-foundations/releases/download/mace_polar_1/MACE-POLAR-1-M.model"
+    },
+    {
+      "name": "MACE-POLAR-1-L.model",
+      "sha256": "9f65f8dc6ddaff1d631e299cb531376a7da5e68d1bef04f34a2d5073d5ef114b",
+      "bytes": 129808715,
+      "url": "https://github.com/ACEsuit/mace-foundations/releases/download/mace_polar_1/MACE-POLAR-1-L.model"
+    }
+  ]
+}

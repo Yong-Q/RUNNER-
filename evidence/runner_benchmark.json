@@ -1,0 +1,39 @@
+{
+  "backend": "runner",
+  "config": {
+    "backend": "runner",
+    "potential": "/home/qiuyong/bza/MLLP/RUNNER-/local/runner_ag_committee",
+    "library": "/home/qiuyong/bza/MLLP/RUNNER-/build/runner_v4/libRuNNer.so",
+    "threads": 4,
+    "uncertainty_calibrated": false,
+    "sampling": {
+      "temperature_K": 300,
+      "timestep_fs": 0.25,
+      "steps": 100,
+      "save_interval": 5,
+      "seed": 42,
+      "stop_sigma_eVA": 1.0
+    },
+    "selection": {
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "budget": 6,
+      "min_step_gap": 10
+    }
+  },
+  "atoms": 3,
+  "members": 2,
+  "warmup": 2,
+  "repeats": 5,
+  "seconds_per_call": [
+    0.0007677178364247084,
+    0.0007367080543190241,
+    0.0007152392063289881,
+    0.0007268351037055254,
+    0.0007516311015933752
+  ],
+  "median_us_per_atom_per_step": 245.5693514396747,
+  "scope": "full committee energy/force call; backend may also compute stress; excludes MD integration and I/O",
+  "same_geometry_repeated": true,
+  "units": "us/atom/step"
+}

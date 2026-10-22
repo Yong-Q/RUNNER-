@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-22",
+  "framework_tests": {
+    "passed": 18,
+    "log": "tests.txt"
+  },
+  "html": "html_checks.json",
+  "actual_jobs": {
+    "96365": {
+      "result": "completed",
+      "kind": "PolarMACE CPU sampling and benchmark",
+      "steps": 12,
+      "duration_fs": 3.0,
+      "atoms": 12,
+      "committee_members": 3
+    },
+    "96385": {
+      "result": "completed",
+      "kind": "RuNNer 4G Ag3 charge -1, two members; inference and stop-condition test",
+      "integration_steps": 0
+    },
+    "96412": {
+      "result": "completed",
+      "kind": "Final-code CPU-only PolarMACE rerun on a gpu-partition node; no GPU requested or used",
+      "steps": 12,
+      "duration_fs": 3.0,
+      "atoms": 12,
+      "committee_members": 3,
+      "note": "Langevin fixcm=False; no production stability claim"
+    },
+    "96419": {
+      "result": "completed",
+      "kind": "Final-code CPU-only RuNNer 4G rerun on gpu-partition node; no GPU requested or used",
+      "integration_steps": 0,
+      "stop_condition": "initial force disagreement above 1 eV/A"
+    }
+  },
+  "vasp": {
+    "prepared_inputs": 6,
+    "real_dft_jobs_submitted": 0,
+    "labels_collected": 0
+  },
+  "training": {
+    "preparation_and_unit_conversion_tested": true,
+    "real_dft_finetuning_executed": false,
+    "runner_4g_training_available": false
+  },
+  "reader_review": {
+    "questions_correct": 8,
+    "gaps_fixed": [
+      "candidate handoff",
+      "retry commands",
+      "training status",
+      "portable Slurm settings",
+      "independent test scope"
+    ]
+  },
+  "known_limitations": [
+    "Pretrained S/M/L disagreement is uncalibrated",
+    "Prior strict PolarMACE rotation covariance gate failed for M/L",
+    "RuNNer silver example is not a gas potential",
+    "Two benchmark numbers are not a fair model speed comparison",
+    "No long-time MD, DFT accuracy or equilibrium-property validation",
+    "DFT reference method and 4G reference charge partition remain unspecified"
+  ]
+}
