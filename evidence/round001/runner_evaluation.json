@@ -1,0 +1,110 @@
+{
+  "config": {
+    "backend": "runner",
+    "potential": "/home/qiuyong/bza/MLLP/RUNNER-/runs/round001_runner_committee",
+    "library": "/home/qiuyong/bza/MLLP/RUNNER-/build/runner_v4/libRuNNer.so",
+    "uncertainty_calibrated": false,
+    "sampling": {
+      "temperature_K": 100,
+      "timestep_fs": 0.1,
+      "friction_per_fs": 0.01,
+      "steps": 5,
+      "save_interval": 1,
+      "seed": 20261022,
+      "stop_sigma_eVA": 1.0
+    },
+    "selection": {
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "budget": 2,
+      "min_step_gap": 2
+    }
+  },
+  "frames": [
+    {
+      "case": "co2_equilibrium_seed",
+      "group": "co2_monomer_scan",
+      "atoms": 3,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -23.42625075285954,
+      "reference_energy_eV": -22.97868695,
+      "energy_error_eV_per_atom": -0.14918793428651375,
+      "force_component_RMSE_eVA": 151.26664279150862,
+      "maximum_absolute_force_component_error_eVA": 320.88500668559675,
+      "max_force_disagreement_eVA": 466.594056220746
+    },
+    {
+      "case": "co2_stretch_0.97",
+      "group": "co2_monomer_scan",
+      "atoms": 3,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": 1.9551774123059882,
+      "reference_energy_eV": -22.8568427,
+      "energy_error_eV_per_atom": 8.270673370768664,
+      "force_component_RMSE_eVA": 402.6541050975536,
+      "maximum_absolute_force_component_error_eVA": 854.1583447912427,
+      "max_force_disagreement_eVA": 1241.034718009541
+    },
+    {
+      "case": "co2_stretch_1.03",
+      "group": "co2_monomer_scan",
+      "atoms": 3,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -54.15918143114229,
+      "reference_energy_eV": -22.84816947,
+      "energy_error_eV_per_atom": -10.43700398704743,
+      "force_component_RMSE_eVA": 40.93843997667071,
+      "maximum_absolute_force_component_error_eVA": 86.84354642110686,
+      "max_force_disagreement_eVA": 931.8000911872782
+    },
+    {
+      "case": "co2_bend_-0.06",
+      "group": "co2_bend_scan",
+      "atoms": 3,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -23.279303177031764,
+      "reference_energy_eV": -22.97259768,
+      "energy_error_eV_per_atom": -0.10223516567725473,
+      "force_component_RMSE_eVA": 1.080076654786519,
+      "maximum_absolute_force_component_error_eVA": 2.4130457265446994,
+      "max_force_disagreement_eVA": 3.412704251627978
+    },
+    {
+      "case": "co2_bend_0.06",
+      "group": "co2_bend_scan",
+      "atoms": 3,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -23.279303177031764,
+      "reference_energy_eV": -22.97259778,
+      "energy_error_eV_per_atom": -0.10223513234392101,
+      "force_component_RMSE_eVA": 1.0800782902885244,
+      "maximum_absolute_force_component_error_eVA": 2.4130500865446995,
+      "max_force_disagreement_eVA": 3.412704251627978
+    },
+    {
+      "case": "CO2_dimer_3.5",
+      "group": "co2_pair_scan",
+      "atoms": 6,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -45.710724916509406,
+      "reference_energy_eV": -45.88890639,
+      "energy_error_eV_per_atom": 0.02969691224843274,
+      "force_component_RMSE_eVA": 7.974035714034717,
+      "maximum_absolute_force_component_error_eVA": 22.07881125290805,
+      "max_force_disagreement_eVA": 31.931068478874018
+    },
+    {
+      "case": "CO2_dimer_5.0",
+      "group": "co2_pair_scan",
+      "atoms": 6,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -44.92350509161563,
+      "reference_energy_eV": -45.97477075,
+      "energy_error_eV_per_atom": 0.17521094306406107,
+      "force_component_RMSE_eVA": 1.7528948221746057,
+      "maximum_absolute_force_component_error_eVA": 3.5169617675341804,
+      "max_force_disagreement_eVA": 7.51415360345612
+    }
+  ],
+  "interpretation": "Tiny workflow test; membership in train/valid must be read from the training manifest. No calibrated uncertainty or production accuracy claim."
+}

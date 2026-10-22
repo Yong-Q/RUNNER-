@@ -1,0 +1,14 @@
+{
+  "cancelled_jobs": [
+    96520,
+    96521,
+    96522
+  ],
+  "requested_ediff_eV": 1e-09,
+  "observed_band_energy_change_floor_eV": [
+    5.7e-09,
+    5.7e-09,
+    9e-09
+  ],
+  "reason": "Charge/wavefunction residuals and total-energy changes are tiny, but band-energy change stagnates above EDIFF. Preserve all outputs; rerun fresh tasks with EDIFF=1e-8 (still tighter than original 1e-7). No unconverged results admitted as labels."
+}

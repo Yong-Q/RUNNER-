@@ -38,6 +38,12 @@ def prepare_training(data, config, out):
     backend = config["backend"]
     if backend == "runner":
         template = Path(config["input_nn_template"]).read_text()
+        if re.search(
+            r"^\s*feature_map_default\s*(?:#.*)?$", template, re.M
+        ) and re.search(r"^\s*symfunction_\w+\s", template, re.M):
+            raise ValueError(
+                "feature_map_default requires symfunction without a dedicated suffix"
+            )
         generation = re.search(r"^\s*nnp_generation\s+(\d+)", template, re.M)
         if not generation:
             raise ValueError("RuNNer template must declare nnp_generation")
@@ -69,6 +75,10 @@ def prepare_training(data, config, out):
                 "batch_size": config.get("batch_size", 2),
                 "valid_batch_size": 2,
                 "max_num_epochs": config.get("epochs", 100),
+                "lr": float(
+                    config.get("lr", 1e-4 if config.get("foundation_model") else 1e-3)
+                ),
+                "plot": bool(config.get("plot", False)),
                 "E0s": config.get("E0s", "average"),
                 "loss": "weighted",
                 "energy_weight": 1.0,
@@ -159,4 +169,88 @@ def prepare_training(data, config, out):
                 "uncertainty_calibrated": False,
             },
         )
+    return directory
+
+
+def assemble_runner(training_path, out, library):
+    """Assemble completed 2G fits only when they share the same descriptor scaling."""
+    import hashlib
+    import shutil
+    from .common import read_json
+
+    training_path = Path(training_path).resolve()
+    manifest = read_json(training_path / "manifest.json")
+    if manifest["backend"] != "runner" or len(manifest["seeds"]) < 2:
+        raise ValueError("Need a trained RuNNer committee")
+    members = [training_path / f"seed_{s}" for s in manifest["seeds"]]
+    reference_scaling = (members[0] / "scaling.data").read_bytes()
+    reference_input = (members[0] / "input.nn").read_text()
+    normalized = lambda s: re.sub(
+        r"^\s*random_seed\s+.*$", "random_seed <member>", s, flags=re.M
+    )
+    if not re.search(r"^\s*nnp_generation\s+2\s*$", reference_input, re.M):
+        raise ValueError("Assembly currently supports 2G short-range fits only")
+    weights = []
+    for member in members:
+        if read_json(member / "exit_status.json")["returncode"] != 0:
+            raise ValueError("A training member failed")
+        if (member / "scaling.data").read_bytes() != reference_scaling:
+            raise ValueError("Member descriptor scaling differs")
+        if normalized((member / "input.nn").read_text()) != normalized(reference_input):
+            raise ValueError("Member architectures differ")
+        paths = sorted(member.glob("opt.weights_short.*.out"))
+        if not paths:
+            raise ValueError("No fitted short-range weights found")
+        weights.append(paths)
+    if any([p.name for p in w] != [p.name for p in weights[0]] for w in weights):
+        raise ValueError("Member species differ")
+    directory = fresh_dir(out).resolve()
+    text = re.sub(
+        r"^\s*dont_use_old_(?:scaling|weights)\b[^\n]*\n?",
+        "",
+        reference_input,
+        flags=re.M,
+    )
+    for key, value in [
+        ("runner_mode", "predict"),
+        ("num_committee_members", str(len(members))),
+        ("initialization_method", "read"),
+    ]:
+        text = (
+            re.sub(r"^\s*" + key + r"\s+.*$", key + " " + value, text, flags=re.M)
+            if re.search(r"^\s*" + key + r"\s+", text, re.M)
+            else text + "\n" + key + " " + value + "\n"
+        )
+    if not re.search(r"^\s*calculate_forces\b", text, re.M):
+        text += "\ncalculate_forces\n"
+    (directory / "input.nn").write_text(text)
+    (directory / "scaling.data").write_bytes(reference_scaling)
+    hashes = {}
+    for i, paths in enumerate(weights, 1):
+        member = fresh_dir(directory / str(i))
+        for path in paths:
+            target = member / path.name.replace("opt.", "", 1).replace(".out", ".data")
+            shutil.copy2(path, target)
+            hashes[str(target.relative_to(directory))] = hashlib.sha256(
+                target.read_bytes()
+            ).hexdigest()
+    dump(
+        directory / "committee.json",
+        {
+            "backend": "runner",
+            "potential": str(directory),
+            "library": str(Path(library).resolve()),
+            "uncertainty_calibrated": False,
+        },
+    )
+    dump(
+        directory / "assembly.json",
+        {
+            "training_path": str(training_path),
+            "seeds": manifest["seeds"],
+            "weight_sha256": hashes,
+            "scaling_sha256": hashlib.sha256(reference_scaling).hexdigest(),
+            "not_validated_for_production": True,
+        },
+    )
     return directory

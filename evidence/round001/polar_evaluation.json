@@ -1,0 +1,116 @@
+{
+  "config": {
+    "backend": "polar",
+    "models": [
+      "/home/qiuyong/bza/MLLP/RUNNER-/runs/round001_polar_train/seed_17/models/committee_17.model",
+      "/home/qiuyong/bza/MLLP/RUNNER-/runs/round001_polar_train/seed_29/models/committee_29.model",
+      "/home/qiuyong/bza/MLLP/RUNNER-/runs/round001_polar_train/seed_43/models/committee_43.model"
+    ],
+    "device": "cpu",
+    "dtype": "float64",
+    "threads": 4,
+    "uncertainty_calibrated": false,
+    "sampling": {
+      "temperature_K": 100,
+      "timestep_fs": 0.1,
+      "friction_per_fs": 0.01,
+      "steps": 5,
+      "save_interval": 1,
+      "seed": 20261022,
+      "stop_sigma_eVA": 1.0
+    },
+    "selection": {
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "budget": 2,
+      "min_step_gap": 2
+    }
+  },
+  "frames": [
+    {
+      "case": "co2_equilibrium_seed",
+      "group": "co2_monomer_scan",
+      "atoms": 3,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -23.301574195882917,
+      "reference_energy_eV": -22.97868695,
+      "energy_error_eV_per_atom": -0.10762908196097243,
+      "force_component_RMSE_eVA": 0.8162836339498013,
+      "maximum_absolute_force_component_error_eVA": 1.7315991088125051,
+      "max_force_disagreement_eVA": 0.0004585105266453708
+    },
+    {
+      "case": "co2_stretch_0.97",
+      "group": "co2_monomer_scan",
+      "atoms": 3,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -23.304126046431104,
+      "reference_energy_eV": -22.8568427,
+      "energy_error_eV_per_atom": -0.14909444881036768,
+      "force_component_RMSE_eVA": 0.8465976169526033,
+      "maximum_absolute_force_component_error_eVA": 1.7959049776506282,
+      "max_force_disagreement_eVA": 0.0003933519801925596
+    },
+    {
+      "case": "co2_stretch_1.03",
+      "group": "co2_monomer_scan",
+      "atoms": 3,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -23.050289461667862,
+      "reference_energy_eV": -22.84816947,
+      "energy_error_eV_per_atom": -0.06737333055595467,
+      "force_component_RMSE_eVA": 0.7928991455489016,
+      "maximum_absolute_force_component_error_eVA": 1.6819939528432757,
+      "max_force_disagreement_eVA": 0.00028725978726624454
+    },
+    {
+      "case": "co2_bend_-0.06",
+      "group": "co2_bend_scan",
+      "atoms": 3,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -23.292484148265526,
+      "reference_energy_eV": -22.97259768,
+      "energy_error_eV_per_atom": -0.10662882275517542,
+      "force_component_RMSE_eVA": 0.8169669722015245,
+      "maximum_absolute_force_component_error_eVA": 1.7375353027440013,
+      "max_force_disagreement_eVA": 0.00045882030115799305
+    },
+    {
+      "case": "co2_bend_0.06",
+      "group": "co2_bend_scan",
+      "atoms": 3,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -23.292484148265526,
+      "reference_energy_eV": -22.97259778,
+      "energy_error_eV_per_atom": -0.10662878942184169,
+      "force_component_RMSE_eVA": 0.8169654087061453,
+      "maximum_absolute_force_component_error_eVA": 1.7375309427440013,
+      "max_force_disagreement_eVA": 0.00045882030115799305
+    },
+    {
+      "case": "CO2_dimer_3.5",
+      "group": "co2_pair_scan",
+      "atoms": 6,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -46.546201551565076,
+      "reference_energy_eV": -45.88890639,
+      "energy_error_eV_per_atom": -0.10954919359417896,
+      "force_component_RMSE_eVA": 0.7888878833211721,
+      "maximum_absolute_force_component_error_eVA": 1.7336649931275812,
+      "max_force_disagreement_eVA": 0.0020967987278914142
+    },
+    {
+      "case": "CO2_dimer_5.0",
+      "group": "co2_pair_scan",
+      "atoms": 6,
+      "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+      "predicted_energy_eV": -46.6046811990802,
+      "reference_energy_eV": -45.97477075,
+      "energy_error_eV_per_atom": -0.1049850748466999,
+      "force_component_RMSE_eVA": 0.810462182461225,
+      "maximum_absolute_force_component_error_eVA": 1.7337971063064126,
+      "max_force_disagreement_eVA": 0.00048157774174957757
+    }
+  ],
+  "interpretation": "Tiny workflow test; membership in train/valid must be read from the training manifest. No calibrated uncertainty or production accuracy claim."
+}

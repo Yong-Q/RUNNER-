@@ -1,0 +1,14 @@
+{
+  "frames": 7,
+  "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+  "groups": [
+    "co2_bend_scan",
+    "co2_monomer_scan",
+    "co2_pair_scan"
+  ],
+  "sources": [
+    "round001_vasp_pilot",
+    "round001_vasp_batch"
+  ],
+  "purpose": "workflow pilot, not production training set"
+}

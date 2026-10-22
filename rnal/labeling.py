@@ -95,6 +95,7 @@ def slurm_script(command, workdir, jobname="label", cores=4, module=None):
         f"cd {shlex.quote(str(workdir))}",
         "export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1",
         "export PYTHONDONTWRITEBYTECODE=1",
+        'export MPLCONFIGDIR="$PWD/cache/matplotlib" XDG_CACHE_HOME="$PWD/cache"',
     ]
     if module:
         lines.extend(

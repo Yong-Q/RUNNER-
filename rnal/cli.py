@@ -49,6 +49,10 @@ def main():
     x.add_argument("--input", required=True)
     x.add_argument("--config", required=True)
     x.add_argument("--out", required=True)
+    x = sub.add_parser("assemble-runner")
+    x.add_argument("--training", required=True)
+    x.add_argument("--out", required=True)
+    x.add_argument("--library", required=True)
     x = sub.add_parser("status")
     x.add_argument("path")
     a = p.parse_args()
@@ -133,6 +137,10 @@ def main():
         from .training import prepare_training
 
         result = prepare_training(a.input, read_json(a.config), a.out)
+    elif a.command == "assemble-runner":
+        from .training import assemble_runner
+
+        result = assemble_runner(a.training, a.out, a.library)
     else:
         root = Path(a.path)
         summaries = []

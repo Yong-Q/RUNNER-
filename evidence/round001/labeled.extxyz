@@ -1,0 +1,41 @@
+3
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3:REF_forces:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=co2_equilibrium_seed gas=CO2 kind=isolated_monomer molecules=1 group=co2_monomer_scan REF_energy=-22.97868695 reference_id=e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993 label_source=vasp energy_convention=free_energy pbc="F F F"
+C        0.00000000       0.00000000       0.00000000       0.00000002      -0.00000002      -0.00000006
+O        0.00000000       0.00000000       1.17865800      -0.00000002       0.00000001      -0.20868706
+O        0.00000000       0.00000000      -1.17865800      -0.00000000       0.00000001       0.20868712
+3
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3:REF_forces:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=co2_stretch_0.97 gas=CO2 kind=isolated_monomer molecules=1 group=co2_monomer_scan REF_energy=-22.8568427 reference_id=e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993 label_source=vasp energy_convention=free_energy pbc="F F F"
+C        0.00000000       0.00000000       0.00000000      -0.00000001      -0.00000002       0.00000045
+O        0.00000000       0.00000000       1.14329826       0.00000001       0.00000002       3.81636879
+O        0.00000000       0.00000000      -1.14329826       0.00000000      -0.00000001      -3.81636925
+3
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3:REF_forces:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=co2_stretch_1.03 gas=CO2 kind=isolated_monomer molecules=1 group=co2_monomer_scan REF_energy=-22.84816947 reference_id=e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993 label_source=vasp energy_convention=free_energy pbc="F F F"
+C        0.00000000       0.00000000       0.00000000      -0.00000001      -0.00000002      -0.00000173
+O        0.00000000       0.00000000       1.21401774       0.00000002       0.00000001      -3.34825309
+O        0.00000000       0.00000000      -1.21401774      -0.00000001       0.00000001       3.34825482
+3
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3:REF_forces:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=co2_bend_-0.06 gas=CO2 kind=isolated_monomer molecules=1 group=co2_bend_scan REF_energy=-22.97259768 reference_id=e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993 label_source=vasp energy_convention=free_energy pbc="F F F"
+C        0.00000000       0.00000000       0.00000000      -0.39739350      -0.00000001       0.12403584
+O       -0.06000000       0.00000000       1.17865800       0.20695713      -0.00000000      -0.33356331
+O        0.00000000       0.00000000      -1.17865800       0.19043637       0.00000001       0.20952747
+3
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3:REF_forces:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=co2_bend_0.06 gas=CO2 kind=isolated_monomer molecules=1 group=co2_bend_scan REF_energy=-22.97259778 reference_id=e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993 label_source=vasp energy_convention=free_energy pbc="F F F"
+C        0.00000000       0.00000000       0.00000000       0.39739426       0.00000003       0.12403369
+O        0.06000000       0.00000000       1.17865800      -0.20695721       0.00000001      -0.33356551
+O        0.00000000       0.00000000      -1.17865800      -0.19043705      -0.00000004       0.20953183
+6
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3:REF_forces:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=CO2_dimer_3.5 gas=CO2 kind=isolated_dimer molecules=2 group=co2_pair_scan REF_energy=-45.88890639 reference_id=e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993 label_source=vasp energy_convention=free_energy pbc="F F F"
+C        8.25000000      12.00000000      12.00000000      -0.12322191       0.00000024      -0.36041000
+O        8.25000000      12.00000000      13.17865800       0.02413414       0.00000022      -0.09696427
+O        8.25000000      12.00000000      10.82134200      -0.43750154      -0.00000018       0.37356939
+C       11.75000000      12.00000000      12.00000000       0.29673208      -0.00000011       0.17669988
+O       12.71550011      12.00000000      12.67605046      -0.27439998      -0.00000007      -0.19188031
+O       10.78449989      12.00000000      11.32394954       0.51425721      -0.00000009       0.09898530
+6
+Lattice="24.0 0.0 0.0 0.0 24.0 0.0 0.0 0.0 24.0" Properties=species:S:1:pos:R:3:REF_forces:R:3 charge=0 spin=1 external_field="0.0 0.0 0.0" case=CO2_dimer_5.0 gas=CO2 kind=isolated_dimer molecules=2 group=co2_pair_scan REF_energy=-45.97477075 reference_id=e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993 label_source=vasp energy_convention=free_energy pbc="F F F"
+C        7.50000000      12.00000000      12.00000000       0.02610433      -0.00000001      -0.06811303
+O        7.50000000      12.00000000      13.17865800       0.00448582      -0.00000001      -0.18007179
+O        7.50000000      12.00000000      10.82134200      -0.00949772       0.00000015       0.23946414
+C       12.50000000      12.00000000      12.00000000       0.04630435      -0.00000006       0.03630225
+O       13.46550011      12.00000000      12.67605046      -0.19414759      -0.00000005      -0.13968299
+O       11.53449989      12.00000000      11.32394954       0.12675082      -0.00000003       0.11210141

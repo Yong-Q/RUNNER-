@@ -1,0 +1,47 @@
+{
+  "status": "completed",
+  "reason": null,
+  "steps_completed": 5,
+  "frames": 6,
+  "candidates": 2,
+  "elapsed_s": 7.521080431062728,
+  "calibrated_uncertainty": false,
+  "records": [
+    {
+      "step": 0,
+      "energy_eV": -46.546201551565076,
+      "temperature_K": 41.83889116992802,
+      "force_sigma_max_eVA": 0.0020967987278914194
+    },
+    {
+      "step": 1,
+      "energy_eV": -46.54630023691436,
+      "temperature_K": 40.38212856417871,
+      "force_sigma_max_eVA": 0.0020972770829165203
+    },
+    {
+      "step": 2,
+      "energy_eV": -46.546520069694644,
+      "temperature_K": 39.80035965063882,
+      "force_sigma_max_eVA": 0.002097490371537595
+    },
+    {
+      "step": 3,
+      "energy_eV": -46.54685830929865,
+      "temperature_K": 39.63414718282351,
+      "force_sigma_max_eVA": 0.0020974592025802
+    },
+    {
+      "step": 4,
+      "energy_eV": -46.54726601939228,
+      "temperature_K": 40.80987661152285,
+      "force_sigma_max_eVA": 0.0020972788545159456
+    },
+    {
+      "step": 5,
+      "energy_eV": -46.54774214122883,
+      "temperature_K": 39.99913100374939,
+      "force_sigma_max_eVA": 0.0020970245932720446
+    }
+  ]
+}

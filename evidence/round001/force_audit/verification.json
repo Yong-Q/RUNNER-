@@ -1,0 +1,120 @@
+{
+  "scope": "Three isolated CO2 validation geometries; not a general gas-model accuracy benchmark",
+  "original_members": [
+    "S",
+    "M",
+    "L"
+  ],
+  "orca_method": "omegaB97M-V/def2-TZVPD, TightSCF, DEFGRID3, ORCA 6.1.1 (same theory level as OMol25, not identical software version)",
+  "orca_jobs": [
+    96526,
+    96535,
+    96536
+  ],
+  "orca_cases": [
+    {
+      "case": "co2_equilibrium_seed",
+      "forces_eVA": [
+        [
+          -2.1250889134080393e-05,
+          7.043383373517315e-06,
+          -2.772806412686443e-05
+        ],
+        [
+          1.1915521386206175e-05,
+          -4.180511210321895e-06,
+          -2.1490738477719646
+        ],
+        [
+          9.33541916994131e-06,
+          -2.8628721631954195e-06,
+          2.149101575784669
+        ]
+      ],
+      "original_S_M_L_component_RMSE_eVA": [
+        0.012399469372022064,
+        0.0039002876397977817,
+        0.002780920514626065
+      ]
+    },
+    {
+      "case": "co2_stretch_0.97",
+      "forces_eVA": [
+        [
+          1.7764267297077445e-05,
+          -2.827185248634626e-06,
+          -2.0915103035979558e-05
+        ],
+        [
+          -1.5066819923712102e-05,
+          4.69128660273164e-06,
+          1.8031115301333827
+        ],
+        [
+          -2.697447373365343e-06,
+          -1.8641013540970138e-06,
+          -1.8030906150303465
+        ]
+      ],
+      "original_S_M_L_component_RMSE_eVA": [
+        0.003998281525547301,
+        0.0012355147448692223,
+        0.002784122281147371
+      ]
+    },
+    {
+      "case": "co2_stretch_1.03",
+      "forces_eVA": [
+        [
+          -7.511169917839418e-06,
+          1.8152503903610572e-06,
+          1.8637362574206713e-05
+        ],
+        [
+          6.118711763096293e-07,
+          -2.120337514408879e-06,
+          -5.229810974885506
+        ],
+        [
+          6.899298741529788e-06,
+          3.0508712404782166e-07,
+          5.229792337522931
+        ]
+      ],
+      "original_S_M_L_component_RMSE_eVA": [
+        0.0032087356026557503,
+        0.0025560542027223154,
+        0.00874017604926831
+      ]
+    }
+  ],
+  "original_S_M_L_validation_force_RMSE_vs_orca_eVA": [
+    0.00774659236983154,
+    0.0027852081577028204,
+    0.0055340019623310805
+  ],
+  "vasp_force_audit": {
+    "atom_index_zero_based": 1,
+    "coordinate": "z",
+    "h_A": 0.001,
+    "fixed_cell": true,
+    "analytic_520_eVA": -0.20868706,
+    "numerical_520_eVA": -0.20896999999919785,
+    "absolute_fd_difference_eVA": 0.0002829399991978454,
+    "analytic_600_eVA": -0.23154639,
+    "cutoff_force_difference_eVA": 0.022859329999999983,
+    "finite_difference_jobs": [
+      96531,
+      96532
+    ],
+    "cutoff_job": 96533,
+    "ediff_original_eV": 1e-07,
+    "ediff_audit_eV": 1e-08,
+    "strict_ediff_1e_9_attempts_cancelled_due_to_numerical_floor": [
+      96520,
+      96521,
+      96522
+    ]
+  },
+  "conclusion": "Original MACE-POLAR agrees closely with matched omegaB97M-V reference on these three frames. Large deviations against PBE-D3 mainly reflect different target energy surfaces; the local VASP force derivative check and 520->600 eV comparison do not explain that large gap. This does not establish full numerical/method convergence or production readiness."
+}

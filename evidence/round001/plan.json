@@ -1,0 +1,11 @@
+{
+  "purpose": "Real-label end-to-end workflow pilot, not a production gas potential",
+  "system": "CO2",
+  "reference": "PBE-D3(BJ)/PAW, 520 eV, Gamma, EDIFF 1e-7; reference-method and numerical convergence not benchmarked",
+  "base_foundation_reference": "OMol25 omegaB97M-V/def2-TZVPD; different from pilot DFT reference",
+  "frames_expected": 7,
+  "source_groups": ["co2_monomer_scan", "co2_bend_scan", "co2_pair_scan"],
+  "training": "3 independently shuffled seeds fine-tuned from the same MACE-POLAR-1-S checkpoint for 2 epochs",
+  "uncertainty_calibrated": false,
+  "followup_sampling": "A few MD steps on a small CO2 configuration; finite-state check only"
+}

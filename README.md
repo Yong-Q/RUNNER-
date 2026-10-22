@@ -9,10 +9,12 @@
 - MACE-POLAR 原生委员会：CO₂、CH₄、N₂ 输入；实跑 CO₂ 周期盒短采样、筛选、计时。
 - RuNNer 2.0：本机编译成功；官方 Ag₃ **4G 两成员委员会实际推理**，可通过同一接口计算分歧与计时。它不是气体模型。
 - VASP：生成独立单点输入、Slurm 脚本；记录排序、电子状态、结构和输入摘要；拒收未收敛/不匹配的标签。
-- 训练准备：MACE / PolarMACE 多种子任务；RuNNer **2G** 数据转换及训练任务。4G 电荷标签和两阶段训练尚未接通。
+- 训练准备：MACE / PolarMACE 多种子任务；RuNNer **2G** 数据转换、训练及原生委员会组装。4G 电荷标签和两阶段训练尚未接通。
 - 所有阶段写新目录，训练和 VASP 执行有独占记录；组间重复结构、来源泄漏和非法标签有测试。
 
-**尚未进行真实 VASP 标注或 DFT 微调，也未完成气体精度、长时 MD 与不确定度校准。** S/M/L 是诊断委员会；已有旋转协变测试中 M/L 存在小偏差，详见教程和 [验证证据](evidence/verification.json)。
+**现已完成 7 个真实 VASP 标签、3 个 MACE-POLAR 微调成员和 3 个 RuNNer 2G 训练成员。** 新 MACE-POLAR 完成 5 步短采样；RuNNer 因分歧过大在初始帧停止。当前权重未达到生产要求，未完成长时 MD 与不确定度校准。详见 [本轮结果](evidence/round001/verification.json)。
+
+关键核验：原始 MACE-POLAR 在同一个 CO₂ 构型上，与匹配的 ORCA ωB97M-V/def2-TZVPD 单点基本一致；相对 PBE-D3 的大差异不能直接称为原模型误差。原始 checkpoint 保留不变；本轮 PBE 微调模型只作流程试验。详见 [参考方法说明](docs/REFERENCE_METHOD.md) 和 [实际力核验](evidence/round001/force_audit/verification.json)。VASP 的能量/力差分自洽，但 520→600 eV 仍带来约 0.0229 eV/Å 的力变化，不能视为数值精度已收敛。
 
 ## 两个 Python 环境
 
@@ -91,6 +93,16 @@ sbatch runs/train_round_001/seed_17/job.slurm
 ```
 
 参考配置当前仅支持中性单重态无外场；NSW=0、IBRION=-1。采样候选必须保留来源 group；若缺失，整个输入文件视为同一个来源。至少两组独立来源才能划分训练/验证。训练完成后还需独立评估和校准，不会自动替换现有委员会。
+
+## 组装 RuNNer 2G 委员会
+
+```bash
+.venv/bin/python scripts/run_cli.py assemble-runner \
+  --training runs/train_runner_round_001 \
+  --library build/runner_v4/libRuNNer.so --out runs/runner_committee_round_001
+```
+
+检查所有成员成功退出、描述符缩放和结构一致后，输出 `committee.json`。这不替代精度验收。首轮试验数据、模型错误及停止结果都按实际情况保留。
 
 ## 验证与维护
 

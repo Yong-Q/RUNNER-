@@ -276,3 +276,84 @@ class SourceGroupTests(unittest.TestCase):
             first = read(out / "frame_00000/original.extxyz")
             second = read(out / "frame_00001/original.extxyz")
             self.assertEqual(first.info["group"], second.info["group"])
+
+
+class FineTuneSettingsTests(unittest.TestCase):
+    frames = IntegrityTests.frames
+
+    def test_finetune_learning_rate_reaches_cli(self):
+        with tempfile.TemporaryDirectory() as t:
+            p = Path(t)
+            write_frames(p / "data.xyz", self.frames())
+            out = prepare_training(
+                p / "data.xyz",
+                {
+                    "backend": "mace",
+                    "seeds": [7, 19],
+                    "lr": 1e-4,
+                    "epochs": 2,
+                    "plot": False,
+                },
+                p / "training",
+            )
+            args = json.loads((out / "seed_7/training_args.json").read_text())
+            self.assertEqual(args["lr"], 1e-4)
+            self.assertEqual(args["max_num_epochs"], 2)
+            self.assertFalse(args["plot"])
+
+
+class RunnerTemplateTests(unittest.TestCase):
+    def test_default_feature_map_rejects_dedicated_symfunctions(self):
+        with tempfile.TemporaryDirectory() as t:
+            p = Path(t)
+            write_frames(p / "data.xyz", IntegrityTests.frames(self))
+            (p / "input.nn").write_text(
+                "nnp_generation 2\nfeature_map_default\nsymfunction_short C 2 O 0.01 0.0 1\n"
+            )
+            with self.assertRaisesRegex(ValueError, "feature_map_default"):
+                prepare_training(
+                    p / "data.xyz",
+                    {
+                        "backend": "runner",
+                        "input_nn_template": str(p / "input.nn"),
+                        "executable": "/usr/bin/true",
+                    },
+                    p / "out",
+                )
+
+
+class AssembleRunnerTests(unittest.TestCase):
+    def test_assembly_checks_success_and_shared_scaling(self):
+        from rnal.training import assemble_runner
+
+        with tempfile.TemporaryDirectory() as t:
+            p = Path(t)
+            train = p / "train"
+            train.mkdir()
+            dump(train / "manifest.json", {"backend": "runner", "seeds": [7, 19]})
+            for seed in [7, 19]:
+                d = train / f"seed_{seed}"
+                d.mkdir()
+                dump(d / "exit_status.json", {"returncode": 0})
+                (d / "input.nn").write_text(
+                    "nnp_generation 2\nrunner_mode train\nelements C O\ninitialization_method uniform\ndont_use_old_scaling\ndont_use_old_weights\n"
+                )
+                (d / "scaling.data").write_text("same scaling")
+                for z in [6, 8]:
+                    (d / f"opt.weights_short.{z:03d}.out").write_text(
+                        f"test weights {seed} {z}"
+                    )
+            assemble_runner(train, p / "committee", "/path/libRuNNer.so")
+            self.assertTrue((p / "committee/1/weights_short.006.data").exists())
+            self.assertNotIn(
+                "dont_use_old_scaling", (p / "committee/input.nn").read_text()
+            )
+            self.assertNotIn(
+                "dont_use_old_weights", (p / "committee/input.nn").read_text()
+            )
+            self.assertIn(
+                "num_committee_members 2", (p / "committee/input.nn").read_text()
+            )
+            (train / "seed_19/scaling.data").write_text("different scaling")
+            with self.assertRaises(ValueError):
+                assemble_runner(train, p / "bad", "/path/libRuNNer.so")

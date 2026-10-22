@@ -1,0 +1,18 @@
+{
+  "training_path": "/home/qiuyong/bza/MLLP/RUNNER-/runs/round001_runner_train_v3",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "weight_sha256": {
+    "1/weights_short.006.data": "5a492cad7bfae60fcb3584d9e1f351ba7ecfe8cd3ae657494a5ee812ec259c8d",
+    "1/weights_short.008.data": "f918fa4a79efd936ed409744062a0f0eb0ba406dd905c4e88717c0bd35a4d52c",
+    "2/weights_short.006.data": "39a189fb411c8d4f3456c5e9a6882fb2be1c6f7b20bf6d5780828fd6e3cc5bfd",
+    "2/weights_short.008.data": "d8f6932033fbf51fe1bb62f6affa0482662aae92cc336d4b6796b3b41363e3b5",
+    "3/weights_short.006.data": "7ba25de085979bd9f2a3eaac897693c26657d056c70ebc144fb84f9d220ba3b0",
+    "3/weights_short.008.data": "d9fd47c738ac513af7a52f39f96c77a068a09fc1f9bb095e68239350351c1ff2"
+  },
+  "scaling_sha256": "4f5b34a84935efdc9591c941bf93a96a1659f03c8ab80f6a2f83872be13dcbe9",
+  "not_validated_for_production": true
+}

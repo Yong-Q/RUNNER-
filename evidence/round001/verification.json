@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-22",
+  "purpose": "Real-label workflow integration test, not a validated gas potential",
+  "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+  "dft": {
+    "method": "VASP PBE-D3(BJ)/PAW",
+    "frames_converged": 7,
+    "frames_rejected": 0,
+    "jobs": [
+      96457,
+      96464,
+      96465,
+      96466,
+      96467,
+      96468,
+      96469
+    ],
+    "encut_eV": 520,
+    "ediff_eV": 1e-07,
+    "vacuum_each_side_A": 10,
+    "convergence_and_method_accuracy_benchmarked": false
+  },
+  "split": {
+    "train": 4,
+    "validation": 3,
+    "independent_test_set": false
+  },
+  "polar": {
+    "foundation": "MACE-POLAR-1-S (original OMol25 reference omegaB97M-V/def2-TZVPD)",
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "epochs": 2,
+    "lr": 0.0001,
+    "training_jobs": [
+      96494,
+      96497,
+      96498
+    ],
+    "evaluation_resampling_job": 96504,
+    "completed_md_steps": 5,
+    "timestep_fs": 0.1,
+    "new_candidates": 2,
+    "models": [
+      {
+        "seed": 17,
+        "bytes": 64399018,
+        "sha256": "5b4d23803c33e6611c8beab9acf7d2cb0035fa735dccf26c8d521bc2b53bc760"
+      },
+      {
+        "seed": 29,
+        "bytes": 64399018,
+        "sha256": "cc05daa5ddd3e2205348027b6766814e7b2e9e7a047d0477a33240b4ea1f7be8"
+      },
+      {
+        "seed": 43,
+        "bytes": 64399018,
+        "sha256": "ccdfb2383109b47120f2e939082caad08f5e80deb1b792dea8cbe352be220cd2"
+      }
+    ]
+  },
+  "runner": {
+    "generation": 2,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "epochs": 5,
+    "training_jobs": [
+      96503,
+      96505,
+      96506
+    ],
+    "evaluation_resampling_job": 96509,
+    "completed_md_steps": 0,
+    "reason": "stopped at initial force disagreement 31.931 eV/A > 1 eV/A",
+    "failed_template_attempts_preserved": [
+      96495,
+      96501
+    ]
+  },
+  "errors_against_this_pbe_reference": {
+    "polar_train_force_component_RMSE_eVA": 0.8055281493107558,
+    "polar_validation_force_component_RMSE_eVA": 0.8188885864585604,
+    "runner_train_force_component_RMSE_eVA": 4.754802946249592,
+    "runner_validation_force_component_RMSE_eVA": 249.45800009958194
+  },
+  "unit_tests_passed": 21,
+  "production_ready": false,
+  "uncertainty_calibrated": false,
+  "limits": [
+    "Insufficient samples and epochs",
+    "Reference method differs from foundation model; this is target adaptation",
+    "No independent test set or thermodynamic validation",
+    "RuNNer 4G gas training still needs a charge-label/staged workflow"
+  ]
+}

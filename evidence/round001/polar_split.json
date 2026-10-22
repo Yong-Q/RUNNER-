@@ -1,0 +1,20 @@
+{
+  "backend": "polar",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "train": 4,
+  "valid": 3,
+  "reference_id": "e99e5e9637dd7064fb112b50392f5e74d98b54dcee630e834e25c7469b02f993",
+  "status": "prepared_not_trained",
+  "train_groups": [
+    "co2_bend_scan",
+    "co2_pair_scan"
+  ],
+  "valid_groups": [
+    "co2_monomer_scan"
+  ],
+  "runner_validation": "held-out valid.extxyz is excluded from native training; evaluate separately"
+}

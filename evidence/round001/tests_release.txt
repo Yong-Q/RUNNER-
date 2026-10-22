@@ -1,0 +1,26 @@
+test_assembly_checks_success_and_shared_scaling (test_integrity.AssembleRunnerTests) ... ok
+test_second_launch_preserves_first_result (test_integrity.ExecutionTests) ... ok
+test_finetune_learning_rate_reaches_cli (test_integrity.FineTuneSettingsTests) ... ok
+test_4g_training_requires_explicit_staged_workflow (test_integrity.IntegrityTests) ... ok
+test_collect_rejects_changed_geometry_and_nonconvergence (test_integrity.IntegrityTests) ... ok
+test_runner_export_preserves_energy_force_units (test_integrity.IntegrityTests) ... ok
+test_training_has_independent_seeds_and_heldout_groups (test_integrity.IntegrityTests) ... ok
+test_training_rejects_unlabeled_or_mixed_reference (test_integrity.IntegrityTests) ... ok
+test_changed_original_geometry_is_rejected (test_integrity.OriginalStructureTests) ... ok
+test_duplicate_geometry_across_groups_rejected (test_integrity.ReviewRegressionTests) ... ok
+test_nonfinite_training_labels_rejected (test_integrity.ReviewRegressionTests) ... ok
+test_reference_cannot_override_charge_spin_or_field (test_integrity.ReviewRegressionTests) ... ok
+test_default_feature_map_rejects_dedicated_symfunctions (test_integrity.RunnerTemplateTests) ... ok
+test_ungrouped_frames_from_one_file_stay_together (test_integrity.SourceGroupTests) ... ok
+test_charge_metadata_is_not_silently_lost (test_workflow.ChargeTests) ... ok
+test_existing_results_are_preserved (test_workflow.WorkflowTests) ... ok
+test_force_disagreement_population_vector (test_workflow.WorkflowTests) ... ok
+test_group_split_no_trajectory_leakage (test_workflow.WorkflowTests) ... ok
+test_labels_restore_atomic_order_and_reject_unconverged (test_workflow.WorkflowTests) ... ok
+test_missing_dft_settings_and_ionic_md_rejected (test_workflow.WorkflowTests) ... ok
+test_selection_deduplicates_before_budget (test_workflow.WorkflowTests) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.456s
+
+OK
