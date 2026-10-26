@@ -3,16 +3,20 @@
 This note records the split between the RUNNER workflow and the GPU 4G
 implementation so the two workstreams do not get conflated.
 
-## Current remote task count
+## Current remote tasks
 
-Only **one** remote task is currently submitted:
+Two single-GPU `queue004` tasks are submitted:
 
 | Task | Purpose | Queue | State |
 |---|---|---|---|
 | `t-20261026135843-f6bq5` | Plan D expanded sampling + MACE-POLAR distillation | `queue004`, 1×A100-80G, 50 h | queued |
+| `t-20261026144930-jw8c7` | RUNNER/4G committee active sampling + 4G distillation | `queue004`, 1×A100-80G, 50 h | queued |
 
-The RUNNER / 4G active-sampling + distillation task is **not submitted yet**.
-Q4 is currently full (64/64 allocated, 0 free); a second task would queue.
+Q4 was fully allocated (64/64, 0 free) when both were submitted, so both are
+waiting for a GPU. The RUNNER task entrypoint is
+`symmetrix-polar/scripts/remote_4g_al_round.sh`; it selects from the bulk pool
+with the c1/c2/c3 committee, merges the selected frames, and fine-tunes the
+fixed 4G student for 5 epochs.
 
 ## Workstream A: Plan D (MACE-POLAR distillation)
 
