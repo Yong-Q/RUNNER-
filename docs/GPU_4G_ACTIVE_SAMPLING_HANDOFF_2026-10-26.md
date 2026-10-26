@@ -5,18 +5,22 @@ implementation so the two workstreams do not get conflated.
 
 ## Current remote tasks
 
-Two single-GPU `queue004` tasks are submitted:
-
 | Task | Purpose | Queue | State |
 |---|---|---|---|
 | `t-20261026135843-f6bq5` | Plan D expanded sampling + MACE-POLAR distillation | `queue004`, 1×A100-80G, 50 h | queued |
-| `t-20261026144930-jw8c7` | RUNNER/4G committee active sampling + 4G distillation | `queue004`, 1×A100-80G, 50 h | queued |
+| `t-20261026144930-jw8c7` | RUNNER/4G committee active sampling + 4G distillation | `queue004`, 1×A100-80G, 50 h | cancelled |
 
-Q4 was fully allocated (64/64, 0 free) when both were submitted, so both are
-waiting for a GPU. The RUNNER task entrypoint is
-`symmetrix-polar/scripts/remote_4g_al_round.sh`; it selects from the bulk pool
-with the c1/c2/c3 committee, merges the selected frames, and fine-tunes the
-fixed 4G student for 5 epochs.
+Q4 was fully allocated (64/64, 0 free) when both were submitted. The 4G task
+was moved to the local shared A100 and the queued duplicate was cancelled.
+The RUNNER task entrypoint is `symmetrix-polar/scripts/remote_4g_al_round.sh`;
+it selects from the bulk pool with the c1/c2/c3 committee, merges the selected
+frames, and fine-tunes the fixed 4G student for 5 epochs.
+
+Local 4G round result: 40 dense frames selected (C2H4/C2H6 only one frame
+each), merged to 1,771 frames, fine-tuned for 5 epochs. Bulk 39.44/77.48 →
+38.79/76.70 meV/atom / meV/Å; gas 48.96/14.93 → 48.14/15.81. The change is
+marginal and the gas force is slightly worse; this again points at the missing
+l=1 multipoles and the thin angular descriptor, not at data quantity.
 
 ## Workstream A: Plan D (MACE-POLAR distillation)
 
